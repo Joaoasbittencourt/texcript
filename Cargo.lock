@@ -66,13 +66,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eb147597cdf94ed43ab7a9038716637d2d1bf2bc571da995d0028dec06bd3018"
 
 [[package]]
-name = "mdough"
-version = "0.1.0"
-dependencies = [
- "structopt",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "0.4.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -127,6 +120,13 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
+]
+
+[[package]]
+name = "texcript"
+version = "0.1.0"
+dependencies = [
+ "structopt",
 ]
 
 [[package]]
