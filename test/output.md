@@ -1,5 +1,7 @@
 
-# Very Important Contract
+# About Me
 
-This is an awesome contract that must be signed by João Pedro Assis Bittencourt. Also João Pedro Assis Bittencourt is a good man.
-And, this person has 24 years old!
+My name is João Pedro Assis Bittencourt and I am 24 years old.
+I was born in SALVADOR at 20/07/1995.
+Currently I am Studying Engenharia Civil at UFBA.
+I Like to spend my time PROGRAMMING!.

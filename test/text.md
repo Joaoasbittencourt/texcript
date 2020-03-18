@@ -1,5 +1,7 @@
 
-# Very Important Contract
+# About Me
 
-This is an awesome contract that must be signed by ${NAME}. Also ${NAME} is a good man.
-And, this person has ${AGE} years old!
+My name is ${NAME} and I am ${AGE} years old.
+I was born in ${CITY} at ${DAY}.
+Currently I am Studying ${COURSE} at ${UNIVERSITY}.
+I Like to spend my time ${ACTIVITY}!.
