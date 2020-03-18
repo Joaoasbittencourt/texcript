@@ -1,6 +1,7 @@
 use structopt::StructOpt;
 use std::fs::{File};
 use std::io::Write;
+use std::collections::HashMap;
 
 static START_PATTERN: &str = "${";
 static END_PATTERN: &str = "}";
@@ -39,12 +40,30 @@ fn main() {
 		Err(error) => { panic!("Error: {}", error) }
 	};
 
+	let mut params = HashMap::new();
+
+	for line in params_data.lines() {
+		if line.contains("=") {
+
+			let items: Vec<String> = line.split("=").map(|s| s.to_string()).collect();
+
+			let param = items[0].to_string();
+			let value = items[1].to_string();
+
+			params.insert(param, value);
+		}
+	}
 
 	let output_file_name = &args.out_path;
-	let value = "João Bittencourt";
-	let token = make_token("NAME");
+	let mut data = input_data;
+
+	for (param, value) in params {
+		let token = make_token(&param);
+		data = data.replace(&token, &value);
+
+	}
 
 	let mut file = File::create(output_file_name).expect("Unable to create file");
-	let data = input_data.replace(&token, &value);
+
 	file.write_all(data.as_bytes()).expect("Unable to write to file");
 }
