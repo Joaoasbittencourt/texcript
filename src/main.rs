@@ -1,4 +1,9 @@
 use structopt::StructOpt;
+use std::fs::{File};
+use std::io::Write;
+
+static START_PATTERN: &str = "${";
+static END_PATTERN: &str = "}";
 
 #[derive(StructOpt)]
 struct Cli {
@@ -6,30 +11,25 @@ struct Cli {
 	path: std::path::PathBuf,
 }
 
-fn main() {
+fn make_token(var_name: &str) -> String {
+	return format!("{}{}{}", START_PATTERN, var_name, END_PATTERN);
+}
 
-	println!();
-	let start_pattern = "${";
-	let end_pattern = "}";
+fn main() {
 
 	let args = Cli::from_args();
 	let result = std::fs::read_to_string(&args.path);
 
 	let content = match result {
 		Ok(content) => { content }
-		Err(error) => {
-			panic!("Error: {}", error);
-		}
+		Err(error) => { panic!("Error: {}", error) }
 	};
 
-	for line in content.lines() {
-		if line.contains(start_pattern) {
-			let start_index = line.find(start_pattern);
-			let line_index = line.find(end_pattern);
+	let value = "João Bittencourt";
+	let token = make_token("NAME");
+	let generated_path = "text.md";
 
-			// get the variables from the variables files
-			// get where to replace
-			// create abither file
-		}
-	}
+	let mut file = File::create(generated_path).expect("Unable to create file");
+	let data = content.replace(&token, &value);
+	file.write_all(data.as_bytes()).expect("Unable to write to file");
 }
