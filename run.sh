@@ -1,1 +1,0 @@
-cargo run -- ./test/text.md
