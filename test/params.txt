@@ -4,4 +4,5 @@ DAY=20/07/1995
 CITY=SALVADOR
 COURSE=Engenharia Civil
 UNIVERSITY=UFBA
-ACTIVITY=programminf
+ACTIVITY=programming
+AWESOME_PERSON=Jéssica Luna
