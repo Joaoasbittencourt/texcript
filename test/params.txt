@@ -1,8 +1,5 @@
-NAME=João Pedro Assis Bittencourt
-AGE=24
-DAY=20/07/1995
-CITY=SALVADOR
-COURSE=Engenharia Civil
-UNIVERSITY=UFBA
-ACTIVITY=programming
-AWESOME_PERSON=Jéssica Luna
+NAME=John Doe
+GREETING=Hello World
+AGE=25
+BIRTHDAY=20/07/1995
+OCCUPATION=Software Developer
